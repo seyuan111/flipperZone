@@ -109,33 +109,38 @@ export const checklistItems = [
 
 export const pricingOptions = [
   {
-    title: "Free",
-    price: "$0",
+    title: "Basic",
+    price: "Free",
     features: [
-      "Private board sharing",
-      "5 Gb Storage",
-      "Web Analytics",
-      "Private Mode",
+      "Order online",
+      "Contact for support",
+      "Basic plan",
+      "Flippers Delivered",
     ],
   },
   {
-    title: "Pro",
-    price: "$10",
+    title: "Prime",
+    price: "$20/mo",
     features: [
-      "Private board sharing",
-      "10 Gb Storage",
-      "Web Analytics (Advance)",
-      "Private Mode",
+      "Order online",
+      "Contact for support",
+      "Basic plan",
+      "Flippers Delivered",
+      "Faster Delivery",
+      "Order more stuff"
     ],
   },
   {
-    title: "Enterprise",
-    price: "$200",
+    title: "Premium",
+    price: "$50/mo",
     features: [
-      "Private board sharing",
-      "Unlimited Storage",
-      "High Performance Network",
-      "Private Mode",
+      "Order online",
+      "Contact for support",
+      "Basic plan",
+      "Flippers Delivered",
+      "Faster Delivery",
+      "Order more stuff",
+      "Learn how to use a Flipper and Drone"
     ],
   },
 ];
