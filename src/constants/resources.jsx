@@ -16,27 +16,27 @@ export const testimonials = [
   {
     user: "John Doe",
     company: "Stellar Solutions",
-    text: "I am extremely satisfied with the services provided. The team was responsive, professional, and delivered results beyond my expectations.",
+    text: "The Flipper I have bought works well. I like how this flipper allows me to do a lot of hacking and I recommend this product.",
   },
   {
     user: "Jane Smith",
     company: "Blue Horizon Technologies",
-    text: "I couldn't be happier with the outcome of our project. The team's creativity and problem-solving skills were instrumental in bringing our vision to life",
+    text: "I used this drone and it delivers the letter to my friends house and it came back to me. I recommend buying products from this site",
   },
   {
     user: "David Johnson",
     company: "Quantum Innovations",
-    text: "Working with this company was a pleasure. Their attention to detail and commitment to excellence are commendable. I would highly recommend them to anyone looking for top-notch service.",
+    text: "I love this flipper product. I love how it can hack, operate the garage etc. I recommend going on this site to buy flippers.",
   },
   {
     user: "Ronee Brown",
     company: "Fusion Dynamics",
-    text: "Working with the team at XYZ Company was a game-changer for our project. Their attention to detail and innovative solutions helped us achieve our goals faster than we thought possible. We are grateful for their expertise and professionalism!",
+    text: "The people were real nice. I bought a flipper, when there was a problem, they help you get it fixed right away. I love this site and this product",
   },
   {
     user: "Michael Wilson",
     company: "Visionary Creations",
-    text: "I am amazed by the level of professionalism and dedication shown by the team. They were able to exceed our expectations and deliver outstanding results.",
+    text: "This site has the best flippers ever. I have bought a flipper from this site and it works well. I love using flippers because I am a flipper fan. This flipper has been amazing and my family loves to use them.",
   },
   {
     user: "Emily Davis",
@@ -122,9 +122,7 @@ export const pricingOptions = [
     title: "Prime",
     price: "$20/mo",
     features: [
-      "Order online",
       "Contact for support",
-      "Basic plan",
       "Flippers Delivered",
       "Faster Delivery",
       "Order more stuff"
@@ -134,13 +132,10 @@ export const pricingOptions = [
     title: "Premium",
     price: "$50/mo",
     features: [
-      "Order online",
       "Contact for support",
-      "Basic plan",
       "Flippers Delivered",
-      "Faster Delivery",
       "Order more stuff",
-      "Learn how to use a Flipper and Drone"
+      "Learn how to use a Flippers"
     ],
   },
 ];
