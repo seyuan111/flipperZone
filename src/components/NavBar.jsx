@@ -31,7 +31,7 @@ const NavBar = () => {
                     </ul>
                     <div className="hidden md:flex justify-center space-x-6 items-center">
                         <Link to="/Login" className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md">Sign In</Link>
-                        <ShoppingCart className="cursor-pointer hover:text-blue-400 duration-300"/>
+                        <Link to="/Checkout"><ShoppingCart className="cursor-pointer hover:text-blue-400 duration-300"/></Link>
                     </div>
                     <div className="md:hidden flex flex-col justify-end">
                         <button onClick={setNav}>
@@ -49,7 +49,7 @@ const NavBar = () => {
                     </ul>
                     <div className="flex space-x-6">
                         <Link to="/Login" className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md">Sign In</Link>
-                        <ShoppingCart className="cursor-pointer hover:text-blue-400 duration-300"/>
+                        <Link to="/Checkout"><ShoppingCart className="cursor-pointer hover:text-blue-400 duration-300"/></Link>
                     </div>
                 </div>
             </div>

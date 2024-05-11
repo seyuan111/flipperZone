@@ -5,6 +5,7 @@ import Contact from './pages/Contact'
 import Purchase from './pages/Purchase'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
+import Checkout from './pages/Checkout'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 
@@ -18,6 +19,7 @@ function App() {
       <Route path='/Purchase' element={<Purchase />}></Route>
       <Route path='/Login' element={<Login />}></Route>
       <Route path="/SignUp" element={<SignUp />}></Route>
+      <Route path="/Checkout" element={<Checkout />}></Route>
     </Routes>
   )
 }
