@@ -1,16 +1,17 @@
-import { Menu, X, ShoppingCart } from 'lucide-react'
-import React, { useState } from 'react'
-import Flipper from '../assets/Flipper.png'
-import { navItems } from '../constants/resources'
-import { Link } from 'react-router-dom'
-
+import { Menu, X, ShoppingCart } from 'lucide-react';
+import React, { useState } from 'react';
+import Flipper from '../assets/Flipper.png';
+import { navItems } from '../constants/resources';
+import { Link } from 'react-router-dom';
+import { useAuth } from '../AuthContext';
 
 const NavBar = () => {
-    const [current, setCurrent] = useState(false)
+    const [current, setCurrent] = useState(false);
+    const { isAuthenticated, login, logout } = useAuth();
 
     const setNav = () => {
-        setCurrent(!current)
-    }
+        setCurrent(!current);
+    };
 
     return (
         <div className="sticky top-0 z-50 py-3 backdrop-blue-lg border-b border-neutral-700/80 bg-neutral-600/60">
@@ -30,7 +31,15 @@ const NavBar = () => {
                         ))}
                     </ul>
                     <div className="hidden md:flex justify-center space-x-6 items-center">
-                        <Link to="/Login" className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md">Sign In</Link>
+                        {isAuthenticated ? (
+                            <button onClick={logout} className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md">
+                                Logout
+                            </button>
+                        ) : (
+                            <Link to="/Login" className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md">
+                                Sign In
+                            </Link>
+                        )}
                         <Link to="/Checkout"><ShoppingCart className="cursor-pointer hover:text-blue-400 duration-300"/></Link>
                     </div>
                     <div className="md:hidden flex flex-col justify-end">
@@ -48,13 +57,21 @@ const NavBar = () => {
                         ))}
                     </ul>
                     <div className="flex space-x-6">
-                        <Link to="/Login" className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md">Sign In</Link>
+                        {isAuthenticated ? (
+                            <button onClick={logout} className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md">
+                                Logout
+                            </button>
+                        ) : (
+                            <Link to="/Login" className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md">
+                                Sign In
+                            </Link>
+                        )}
                         <Link to="/Checkout"><ShoppingCart className="cursor-pointer hover:text-blue-400 duration-300"/></Link>
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default NavBar
+export default NavBar;

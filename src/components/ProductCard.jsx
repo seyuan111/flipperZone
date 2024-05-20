@@ -3,7 +3,7 @@ import { FaStar } from 'react-icons/fa';
 import { CartContext } from '../constants/CartContext';
 
 const ProductCard = (props) => {
-    const { product } = props;
+    const product = props.product;
     const cart = useContext(CartContext);
     const [isAdded, setIsAdded] = useState(false);
     const productQuantity = cart.getProductQuantity(product.id);
@@ -19,7 +19,12 @@ const ProductCard = (props) => {
 
     const handleAddToOrder = () => {
         cart.addOneToCart(product.id);
-        cart.proceedToCheckout(); // Update cart context to proceed to checkout
+        if (cart.proceedToCheckout) { // Check if proceedToCheckout exists
+            cart.proceedToCheckout(); // Update cart context to proceed to checkout
+        } else {
+            console.error("proceedToCheckout function is not available in CartContext.");
+            // Handle the situation where proceedToCheckout is not available
+        }
     };
 
     return (
