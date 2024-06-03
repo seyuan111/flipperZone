@@ -84,13 +84,13 @@ export const features = [
   },
   {
     icon: <BatteryCharging />,
-    text: "Pro Drone",
+    text: "Raspberry Pi",
     description:
       "This Drone has a built in camera. It operates through wifi, it has a headless mode. If you want to use this to see what is going on outside.",
   },
   {
     icon: <PlugZap />,
-    text: "Delivery Drone",
+    text: "Firmware Upgrades",
     description:
       "Want to deliver an item to your team. This delivery drone can help deliver items to any places where you want to deliver.",
   },

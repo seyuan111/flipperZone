@@ -2,27 +2,27 @@ const productsArray = [
     {
         id: "1",
         name: "Flipper Zero",
-        price: 10.20
+        price: 10.21
     },
     {
         id: "2",
-        name: "Flipper Hardware",
+        name: "GPIO Accessories",
         price: 15.55
     },
     {
         id: "3",
-        name: "Drone",
-        price: 200.33
+        name: "Raspberry Pi",
+        price: 13.55
     },
     {
         id: "4",
-        name: "Drone with Camera",
-        price: 500.33
+        name: "Firmware Upgrades",
+        price: 12.55
     },
     {
         id: "5",
-        name: "Drone with Camera and HD",
-        price: 2000.33
+        name: "Technical Support",
+        price: 11.55
     },
 ];
 
