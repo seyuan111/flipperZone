@@ -1,50 +1,48 @@
-import React, { useContext, useState, useEffect } from 'react';
-import { FaStar } from 'react-icons/fa';
+import React, { useContext } from 'react';
+import { IoIosRemove, IoIosAdd } from "react-icons/io";
+import { FaPlus } from 'react-icons/fa';
 import { CartContext } from '../constants/CartContext';
 
-const ProductCard = (props) => {
-    const product = props.product;
-    const cart = useContext(CartContext);
-    const [isAdded, setIsAdded] = useState(false);
-    const productQuantity = cart.getProductQuantity(product.id);
-
-    useEffect(() => {
-        setIsAdded(productQuantity > 0);
-    }, [productQuantity]);
-
-    const handleAddToCart = () => {
-        cart.addOneToCart(product.id);
-        setIsAdded(true);
-    };
-
-    const handleAddToOrder = () => {
-        cart.addOneToCart(product.id);
-        if (cart.proceedToCheckout) { // Check if proceedToCheckout exists
-            cart.proceedToCheckout(); // Update cart context to proceed to checkout
-        } else {
-            console.error("proceedToCheckout function is not available in CartContext.");
-            // Handle the situation where proceedToCheckout is not available
-        }
-    };
+const ProductCard = ({ product }) => {
+    const { cartItems, addToCart, decrement } = useContext(CartContext);
+    const { _id, name, price } = product;
 
     return (
-        <div className="border rounded shadow p-4 m-6 text-white">
-            <h2 className="text-lg font-bold mb-2">{product.name}</h2>
-            <p className="text-neutral-400">${product.price}</p>
-            {isAdded ? (
+        <div className="border rounded-lg shadow-lg p-6 m-4 bg-gray-800 text-white">
+            {cartItems[_id] > 0 ? (
                 <div className="mt-4">
-                    <div className="flex items-center">
-                        <label className="mr-2">{productQuantity}</label>
-                        <div className="flex">
-                            <button className="px-2 py-1 bg-blue-500 text-white rounded-full mr-2" onClick={() => cart.addOneToCart(product.id)}>+</button>
-                            <button className="px-2 py-1 bg-blue-500 text-white rounded-full" onClick={() => cart.removeOneFromCart(product.id)}>-</button>
+                    <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-4">
+                            <IoIosRemove 
+                            className="minus text-2xl cursor-pointer text-red-500" 
+                            onClick={() => decrement(_id)} 
+                            />
+                            <p className="count text-xl">{cartItems[_id]}</p>
+                            <IoIosAdd 
+                                className="plus text-2xl cursor-pointer text-green-500" 
+                                onClick={() => addToCart(_id, false)} 
+                            />
                         </div>
                     </div>
-                    <button className="mt-4 px-4 py-2 ml-6 bg-green-500 text-white rounded" onClick={handleAddToOrder}>Add to Order</button>
                 </div>
             ) : (
-                <button className="mt-2 px-4 py-2 bg-blue-500 text-white rounded" onClick={handleAddToCart}>Add to Cart</button>
+                <FaPlus 
+                    className="add text-2xl cursor-pointer text-blue-500" 
+                    onClick={() => addToCart(_id, true)} 
+                />
             )}
+            <div className="mt-4">
+                <div className="mb-2">
+                    <p className="text-xl font-semibold">{name}</p>
+                </div>
+                <p className="text-lg font-medium text-gray-300">${price.toFixed(2)}</p>
+                <button 
+                    className="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition duration-300" 
+                    onClick={() => addToCart(_id, true)}
+                >
+                    Add to Cart
+                </button>
+            </div>
         </div>
     );
 };
