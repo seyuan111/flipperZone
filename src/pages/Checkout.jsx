@@ -1,12 +1,13 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../constants/CartContext';
 import { useNavigate } from 'react-router-dom';
+import { IoIosRemove, IoIosAdd } from "react-icons/io";
 import NavBar from '../components/NavBar';
 
 const Checkout = () => {
-    const { cartItems, productsArray, removeFromCart, getTotalCartAmount } = useContext(CartContext);
+    const { cartItems, productsArray, removeFromCart, addToCart, decrement, getTotalCartAmount } = useContext(CartContext);
     const navigate = useNavigate();
-    const deliveryFee = 10;
+    const deliveryFee = 5;
     const subtotal = parseFloat(getTotalCartAmount());
     const total = subtotal + deliveryFee;
 
@@ -29,7 +30,17 @@ const Checkout = () => {
                                 <div className="grid grid-cols-6 gap-2 sm:gap-4 items-center text-center text-xs sm:text-sm md:text-base">
                                     <p className="truncate">{item.name}</p>
                                     <p>${item.price.toFixed(2)}</p>
-                                    <p>{cartItems[item._id]}</p>
+                                    <div className="flex justify-center items-center space-x-4">
+                                        <IoIosRemove 
+                                            className="text-3xl sm:text-4xl cursor-pointer text-red-500 hover:text-red-600"
+                                            onClick={() => decrement(item._id)} 
+                                        />
+                                        <p className="text-xl font-semibold">{cartItems[item._id]}</p>
+                                        <IoIosAdd 
+                                            className="text-3xl sm:text-4xl cursor-pointer text-green-500 hover:text-green-600"
+                                            onClick={() => addToCart(item._id, false)} 
+                                        />
+                                    </div>
                                     <p>${(item.price * cartItems[item._id]).toFixed(2)}</p>
                                     <p 
                                         onClick={() => removeFromCart(item._id)} 
@@ -67,7 +78,7 @@ const Checkout = () => {
                         </div>
                     </div>
                     <button 
-                        onClick={() => navigate('/order')} 
+                        onClick={() => navigate('/Proceed')} 
                         className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 w-full text-xs sm:text-sm md:text-base"
                     >
                         Proceed to Checkout

@@ -14,7 +14,7 @@ const NavBar = () => {
     };
 
     return (
-        <div className="sticky top-0 z-50 py-3 backdrop-blue-lg border-b border-neutral-700/80 bg-neutral-600/60">
+        <div className="sticky top-0 z-50 py-3 backdrop-blue-lg border-b-2 border-white bg-gradient-to-r from-black to-gray-700">
             <div className="container px-4 mx-auto relative text-sm">
                 <div className="flex justify-between items-center">
                     <div className="flex items-center flex-shrink-0">
@@ -32,11 +32,11 @@ const NavBar = () => {
                     </ul>
                     <div className="hidden md:flex justify-center space-x-6 items-center">
                         {isAuthenticated ? (
-                            <button onClick={logout} className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md">
+                            <button onClick={logout} className="border-2 hover:bg-black duration-300 py-2 px-3 rounded-md">
                                 Logout
                             </button>
                         ) : (
-                            <Link to="/Login" className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md">
+                            <Link to="/Login" className="border-2 hover:bg-black duration-300 py-2 px-3 rounded-md">
                                 Sign In
                             </Link>
                         )}
@@ -58,11 +58,11 @@ const NavBar = () => {
                     </ul>
                     <div className="flex space-x-6">
                         {isAuthenticated ? (
-                            <button onClick={logout} className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md">
+                            <button onClick={logout} className="border-2 hover:bg-black duration-300 py-2 px-3 rounded-md">
                                 Logout
                             </button>
                         ) : (
-                            <Link to="/Login" className="bg-gradient-to-r from-blue-500 to-blue-700 py-2 px-3 rounded-md">
+                            <Link to="/Login" className="border-2 hover:bg-black duration-300 py-2 px-3 rounded-md">
                                 Sign In
                             </Link>
                         )}

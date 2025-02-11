@@ -8,7 +8,7 @@ const ProductCard = ({ product }) => {
     const { _id, name, price } = product;
 
     return (
-        <div className="border rounded-lg shadow-lg p-6 m-4 bg-gray-800 text-white">
+        <div className="border-2 rounded-lg shadow-lg p-6 m-4 bg-gray-800 text-white">
             {cartItems[_id] > 0 ? (
                 <div className="mt-4">
                     <div className="flex items-center justify-between">

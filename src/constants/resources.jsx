@@ -143,6 +143,7 @@ export const pricingOptions = [
       "Contact for support",
       "Flippers Delivered",
       "Faster Delivery",
+      "order online",
       "Order more stuff"
     ],
   },
@@ -153,7 +154,9 @@ export const pricingOptions = [
       "Contact for support",
       "Flippers Delivered",
       "Order more stuff",
-      "Learn how to use a Flippers"
+      "Learn how to use a Flippers",
+      "Free delivery",
+      "Faster Delivery"
     ],
   },
 ];

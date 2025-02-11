@@ -5,6 +5,8 @@ import Features from '../components/Features'
 import Information from '../components/Information'
 import Pricing from '../components/Pricing'
 import Reviews from '../components/Reviews'
+import Footer from '../components/Footer'
+import Swiper from '../components/SwiperSlider'
 
 const Home = () => {
   return (
@@ -14,9 +16,11 @@ const Home = () => {
       <Main />
       <Features />
       <Information />
+      <Swiper />
       <Pricing />
       <Reviews />
     </div>
+    <Footer />
     </div>
   )
 }

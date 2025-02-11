@@ -6,6 +6,7 @@ import Purchase from './pages/Purchase'
 import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import Checkout from './pages/Checkout'
+import ProceedCheckout from './pages/ProceedCheckout'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
 
@@ -20,6 +21,7 @@ function App() {
       <Route path='/Login' element={<Login />}></Route>
       <Route path="/SignUp" element={<SignUp />}></Route>
       <Route path="/Checkout" element={<Checkout />}></Route>
+      <Route path="/Proceed" element={<ProceedCheckout />}></Route>
     </Routes>
   )
 }

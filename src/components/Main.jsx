@@ -15,8 +15,8 @@ const Main = () => {
             <Link to="/About" className="py-3 px-4 mx-3 rounded-md border">Learn More</Link>
         </div>
         <div className="flex justify-center my-10">
-            <img src={FlipperZero} className="rounded-lg w-1/2 mx-2 my-4" />
-            <img src={FlipperOne} className="rounded-lg w-1/2 mx-2 my-4" />
+            <img src={FlipperZero} className="rounded-lg w-[40%] mx-2 my-4" />
+            <img src={FlipperOne} className="rounded-lg w-[40%] mx-2 my-4" />
         </div>
     </div>
   )
