@@ -78,11 +78,15 @@ const Checkout = () => {
                         </div>
                     </div>
                     <button 
-                        onClick={() => navigate('/Proceed')} 
-                        className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 w-full text-xs sm:text-sm md:text-base"
-                    >
-                        Proceed to Checkout
-                    </button>
+                    onClick={() => {
+                        if (Object.keys(cartItems).length > 0) {
+                            navigate('/Proceed', { state: { purchasedItems: cartItems, deliveryFee } });
+                        }
+                    }}
+                    className="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 w-full text-xs sm:text-sm md:text-base"
+                >
+                    Proceed to Checkout
+                </button>
                 </div>
 
                 <div className="mt-6 flex-1">
